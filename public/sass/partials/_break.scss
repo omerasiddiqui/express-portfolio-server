@@ -1,0 +1,46 @@
+.break {
+    height: 2vh;
+    width: 100vw;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(../assets/images/space2.jpg);
+    // animation: slide 20s linear infinite;
+}
+
+@keyframes borderChange {
+    0% {
+        border-color: $primary-color;
+    }
+    20% {
+        border-color: #55f6fc;
+    }
+    40% {
+        border-color: #55a2fc;
+    }
+    60% {
+        border-color:#555dfc;
+    }
+    80% {
+        border-color: #9755fc;
+    }
+    100% {
+        border-color: #d255fc;
+    }
+}
+
+
+// @media (max-width: $small-screen){
+
+
+// }
+
+// @media (min-width: $small-landscape-screen){
+
+// }
+
+// @media (min-width: medium-screen){
+
+// }
+
+// @media (min-width: $large-screen){
+    
+// }
+

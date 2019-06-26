@@ -1,0 +1,210 @@
+#home {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url(../assets/images/space-hero.png);
+    background-size: cover;
+    padding: 1px;
+    height: 100vh;
+    position: sticky;
+}
+
+.hire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.2);
+    width: 80%;
+    animation: borderChange 4s alternate infinite;
+
+}
+
+@keyframes borderChange {
+    0% {
+        border-bottom: 1px solid rgba(211,211,211,0.2);
+    }
+    50% {
+        border-bottom: 1px solid $primary-color;
+    }
+    75% {
+        border-bottom: 2px solid $white;
+    }
+    100% {
+        border-bottom: 1px solid rgba(211,211,211,0.2);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ca60f5;
+    }
+    25% {
+        color: darken(#ca60f5, 10);
+    }
+    75% {
+        color: $primary-color;
+    }
+    100% {
+        color: darken($primary-color, 10);
+    }
+}
+
+.hire .smooth {
+    color: $primary-color;
+    font-size: 1.5rem;
+    padding: 1% 2%;
+    transition: 0.6s ease;
+    font-weight: bold;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    &:hover {
+        color: $white;
+        border-left: 1px solid $white;
+        border-right: 1px solid $white;
+
+    }
+
+}
+
+.header-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.2);
+
+}
+
+.header-links {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0 2%;
+}
+
+.header-links .smooth {
+    text-align: center;
+    width: 48%;
+    font-size: 1.2rem;
+    color: $primary-color;
+    padding: 10px;
+    border: 2px solid $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        background: rgba(255,255,255,0.2);
+    }
+    &:nth-of-type(2) {
+        color: $white;
+        border: 2px solid $white;
+    }
+
+}
+
+.header-text {
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 2% 0 0 0;
+    color: $white;
+    font-family: $heading-font;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.header-primary {
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 2% 0 0 0;
+    color: $white;
+    font-family: $heading-font;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-size: 5rem;
+    margin-top: 10%;
+    text-shadow: 3px 3px 1px $black;
+}
+
+.header-secondary {
+    color: darken($white, 10);
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 3px 3px 1px $black;
+    margin: 2% 0 0 0;
+    padding: 0 5%;
+    &:nth-of-type(2){
+        margin: 0;
+    }
+}
+
+//  media queries
+
+@media (max-width: $large-screen){
+    #home {
+        background-position: center;
+    }
+    .inner-wrapper {
+        width: 90%;
+    }
+    .header-links .smooth {
+        height: 12vh;
+    }
+    .header-links {
+        margin-top: 15%;
+    }
+    .header-secondary {
+        &:nth-of-type(1) {
+            margin-bottom: 3%;
+        }
+    }
+}
+
+@media (max-width: $medium-screen) {
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .header-primary {
+        font-size: 4.7rem;
+    }
+    .header-links {
+        flex-wrap: wrap;
+        margin-top: 5%;
+    }
+    .header-links .smooth {
+        font-size: 1.4rem;
+        width: 100%;
+        margin-bottom: 5%;
+        height: 12vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-links .smooth {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: $small-screen){
+    #home {
+        background-position: 550px;
+    }
+    .inner-wrapper {
+        width: 90%;
+    }
+    .header-primary {
+        font-size: 3.5rem !important;
+        margin: 7% 0 3%;
+    }
+    .header-secondary {
+        font-size: 1.7rem;
+    }
+    .header-links .smooth {
+        font-size: 1.1rem;
+        width: 100%;
+        margin-bottom: 5%;
+        height: 12vh;
+    }
+}
+

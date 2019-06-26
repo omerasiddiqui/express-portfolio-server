@@ -1,0 +1,134 @@
+#about {
+    display: flex;
+    .header-text {
+        margin-top: 2%;
+    }
+}
+
+#modal-open {
+    font-weight: bold;
+    text-decoration: underline;
+    color: lighten($primary-color, 15);
+    cursor: pointer;
+}
+
+#modal-exit {
+    padding: 9px 18px;
+    font-family: $body-font;
+    background: $white;
+    color: $black;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:hover {
+        background: $black;
+        color: $white;
+    }
+}
+
+.about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid $primary-color;
+    background: url(../assets/images/darkness.png);
+    position: relative;
+}
+
+.about-text {
+    width: 60%;
+    padding: 0 3% 3%;
+    font-size: 1.3rem;
+    color: $white;
+    letter-spacing: 1px;
+    line-height: 1.55;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 7px;
+    height: 100%;
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    left: 3vw;
+    right: 0;
+    background: rgba(55, 55, 55, 0.9);
+}
+
+.skillcard-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.3%;
+    font-size: 3.0rem;
+    text-align: center;
+    color: white;
+}
+
+.close-out {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: rgba(21, 242, 198, 0.9);
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: $large-screen){
+    #about {
+        height: 65vh;
+        .header-text {
+            margin-top: 0;
+        } 
+    }
+    .inner-wrapper {
+        width: 90%;
+    }
+    .about-text {
+        line-height: 1.45;
+    }
+    .modal {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media (max-width: $medium-screen) {
+
+}
+
+@media (max-width: $small-screen){
+    .header-text {
+        font-size: 3.0rem;
+        padding-top: 5%;
+    }
+    #about {
+        height: 80vh;
+        .header-text {
+            padding-top: 0;
+            margin-top: 15%;
+        }
+    }
+    
+    .section-subheader {
+        font-size: 1.6rem;
+    }
+    .about-text {
+        width: 90%;
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1.65;
+        p {
+            margin-bottom: 15%;
+        }
+    }
+}
+
+
+
+

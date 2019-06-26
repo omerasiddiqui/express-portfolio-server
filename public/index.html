@@ -4,11 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Josefin+Slab|Playfair+Display:400,900" rel="stylesheet">    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="assets/resources/animate.min.css">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Omer Siddiqui</title>
 </head>
 <body>
+    <!-- header starts here -->
+    <header id="home">
+       <div class="hire">
+           <a class="smooth" href="#contact">Hire me</a>
+       </div>
+        <div class="inner-wrapper header-main">
+            <h1 class="header-primary">Hi - I'm Omer Siddiqui,</h1>
+            <h2 class="header-secondary">a front-end developer based out of Houston.</h2>
+            <h2 class="header-secondary"> I build things for the internet.</h2>
+            <div class="header-links">
+                <a class="smooth"  href="#about">Learn more about me</a>
+                <a class="smooth" href="#projects">See my work</a>
+            </div>
+        </div>
+    </header>
+    <!-- header ends -->
+    <!-- main starts here -->
+    <main>
 
-    <h1>portfolio</h1>
-    
+        <section id="project-header">
+            <h2 class="header-text">Check out my work</h2>
+        </section>
+
+        <section id="projects">
+            <div class="project project01 wow animated slideInUp" data-wow-delay="0.3s">
+                <h4 class="project-header">Character Rolodex</h4>
+                <a target="_blank" href="https://omerasiddiqui.github.io/character-rolodex/"><img src="assets/images/rolodex.png" alt="project 01"></a>
+                <p>javascript // dom manipulation // web api's</p>
+                <a target="_blank" href="https://github.com/omerasiddiqui/character-rolodex" class="view-src">view code</a>
+            </div>
+            <div class="project project02 wow animated slideInUp" data-wow-delay="0.3s">
+                <h4 class="project-header">Show Me What You Got</h4>
+                <a target="_blank" href="https://omerasiddiqui.github.io/Ipsum-Generator/"><img src="assets/images/ipsum.png" alt="project 02"></a>                <p>javascript // dom manipulation // responsive design</p>
+                <a target="_blank" href="https://github.com/omerasiddiqui/Ipsum-Generator" class="view-src">view code</a>
+            </div>
+            <div class="project project03 wow animated slideInUp" data-wow-delay="0.3s">
+                <h4 class="project-header">Responsive PSD</h4>
+                <a target="_blank" href="https://omerasiddiqui.github.io/responsive-psd/"><img src="assets/images/responsive-psd.png" alt="project 03"></a>                <p> html + css // responsive design // psd conversion</p>
+                <a target="_blank" href="https://github.com/omerasiddiqui/responsive-psd" class="view-src">view code</a>
+            </div>
+            <div class="project project04 wow animated slideInUp" data-wow-delay="0.3s">
+                <h4 class="project-header">To Do App</h4>
+                <a target="_blank" href="https://omerasiddiqui.github.io/jQuery-toDo-app/"><img src="assets/images/todo.png" alt="project 04"></a>                <p>html + css // jquery // design</p>
+                <a target="_blank" href="https://github.com/omerasiddiqui/jQuery-toDo-app" class="view-src">view code</a>
+            </div>
+        </section>
+
+        <section id="about">
+                <div class="about">
+                    <h2 class="header-text">About Me</h2>
+                    <div class="about-text inner-wrapper wow animated slideInUp" data-wow-delay="0.3s">
+                    <p>Hello, I’m Omer Siddiqui - and my favorite words are possibilities, opportunities, and curiousity. I love to create things that will benefit people. The majority of my time is spent creating beautiful and functional websites and applications. I try to learn something new every day to add to my <span id="modal-open" class="wow animated flash" data-wow-delay="7.25s">skill set</span>. When I’m not busy creating sick websites, you can catch me reading or running.</p>
+                        <div id="skills" class="modal animated visually-hidden">
+                                <div class="skillcard-icon">
+                                    <i class="devicon-html5-plain-wordmark"></i>
+                                </div>
+                                <div class="skillcard-icon">
+                                        <i class="devicon-css3-plain-wordmark"></i>
+                                </div>
+                                <div class="skillcard-icon">
+                                        <i class="devicon-javascript-plain"></i>
+                                </div>
+                                <div class="skillcard-icon">
+                                        <i class="devicon-sass-original"></i>
+                                </div>
+                                <div class="skillcard-icon">
+                                        <i class="devicon-gulp-plain"></i>
+                                </div>
+                                <div class="skillcard-icon">
+                                        <i class="devicon-git-plain-wordmark"></i>
+                                </div>
+                                <div class="skillcard-icon">
+                                        <i class="devicon-bootstrap-plain-wordmark"></i>
+                                    </div>
+                                <div class="skillcard-icon">
+                                        <i class="devicon-jquery-plain-wordmark"></i>
+                                </div>
+                                <div class="skillcard-icon">
+                                        <i class="devicon-react-original-wordmark"></i>
+                                </div>
+                                <div class="close-out">
+                                    <button id="modal-exit">close</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <section id="contact">
+            <div class="inner-wrapper">
+                <h2 class="header-text">Contact</h2>
+
+                <section>
+                        <div class="container contact-section wow animated slideInUp">
+                          <div class="wrapper">
+                            <div class="contact">
+                              <div class="alert">Your message has been sent!</div>
+                              <form id="contactForm" method="POST" action="http://www.focuspocus.io/magic/da9978c34bb2c033bc2d47ef76e39f96">
+                                <div class="top-line">
+                                  <p class="name-field">
+                                    <label>Name <span>*</span></label>
+                                    <input type="text" name="name" id="name" required>
+                                  </p>
+                                  <p class="phone-field">
+                                    <label>Phone</label>
+                                    <input type="text" name="phone" id="phone">
+                                  </p>
+                                </div>
+                                <p class="email-field">
+                                  <label>Email <span>*</span></label>
+                                  <input type="email" name="email" id="email" required>
+                                </p>
+                                <div class="invalid">
+                                  <p class="invalid">Please enter a valid email address</p>
+                                </div>
+                                <p class="message-field full">
+                                  <label>Message</label>
+                                  <textarea name="message" rows="5" id="message"></textarea>
+                                </p>
+                                <p class="required-field">Required field <span>*</span></p>
+                                <p class="submit-button">
+                                  <button type="submit" id="submit">Send</button>
+                                </p>
+                              </form>
+                              <ul class="social-nav">
+                                    <li>
+                                        <p>github</p>
+                                        <a class="social-links" target="_blank" href="https://github.com/omerasiddiqui"><img src="assets/images/github.svg" alt="github"></a>
+                                    </li>
+                                    <li>
+                                        <p>linkedin</p>
+                                        <a class="social-links" target="_blank" href="https://www.linkedin.com/in/omerasiddiqui/"><img src="assets/images/linkedin.svg" alt="linkedin"></a>
+                                    </li>
+                                    <li>
+                                        <p>CV</p>
+                                        <a class="social-links" target="_blank" href="https://www.visualcv.com/omer-siddiqui"><img src="assets/images/cv.svg" alt="cv"></a>
+                                    </li>
+                                    <li>
+                                        <p>instagram</p>
+                                        <a class="social-links" target="_blank" href="https://www.instagram.com/omerskywalker/"><img src="assets/images/instagram.svg" alt="instagram"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wow zoomOutUp animated ship" data-wow-delay="2.5s">
+                            <img src="assets/images/deathstar2.png" alt="millenium falcon">
+                        </div>
+                      </section>
+            </div>
+        </section>
+        
+
+    </main>
+    <!-- main ends -->
+    <!-- footer starts here -->
+    <footer class="full-footer">
+        <div id="footer" class="inner-wrapper">
+            <p class="copyright">copyright © omer siddiqui 2018 | <a class="footer-email" href="mailto:hello@omer.codes">hello@omer.codes</a>  </p>
+
+        </div>
+    </footer>
+    <!-- footer ends -->
+    <!-- load jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+    <!-- load smoothScroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+    <!-- load typeIt -->
+    <script src="assets/resources/typeit.min.js" /></script>
+    <!-- load wow.js -->
+    <script src="assets/resources/wow.min.js"></script>
+    <!-- load my scripts -->
+    <script src="js/projects.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
