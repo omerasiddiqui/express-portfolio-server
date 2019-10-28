@@ -820,3 +820,62 @@ input[name="name"], input[name="phone"] {
   #footer {
     text-align: center;
     font-size: 0.7rem; } }
+
+#books-main-div, #books-loggedIn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 35%;
+  border: 1px solid lightgrey;
+  margin: 0 auto;
+  margin-top: 150px;
+  padding: 20px; }
+  #books-main-div p, #books-loggedIn-div p {
+    font-size: 1rem; }
+
+#books-main-div h3, #books-loggedIn-div h3 {
+  font-size: 2.5rem;
+  text-shadow: 1.5px 1.5px 0px #5d8ffc;
+  font-weight: 700; }
+
+#books-main-div input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  background: #fff;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px; }
+  #books-main-div input:focus {
+    border: 1px solid #777; }
+
+#loginBtn, #logoutBtn {
+  background: #5d8ffc;
+  color: #fff;
+  border: 0px;
+  border-radius: 5px;
+  padding: 15px;
+  display: block;
+  width: 100%;
+  transition: 0.3s ease; }
+  #loginBtn:hover, #logoutBtn:hover {
+    background: #fff;
+    color: #5d8ffc;
+    border: 1px solid #5d8ffc; }
+
+#signUpBtn {
+  background: #fff;
+  color: #5d8ffc;
+  border: 1px solid #5d8ffc;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 15px;
+  display: block;
+  width: 100%;
+  transition: 0.3s ease; }
+  #signUpBtn:hover {
+    background: #5d8ffc;
+    color: #fff;
+    border: 1px solid #fff; }

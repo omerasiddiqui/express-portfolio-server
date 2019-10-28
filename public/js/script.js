@@ -69,3 +69,24 @@ close.on("click", function() {
     }, 700)
 })
 
+////////////
+const api_key = 'AIzaSyC1enG5_1nkoR0vCWS3N3RGpDEuyfcfPeQ';
+const url = `https://www.googleapis.com/books/v1/volumes?q=dorian+inauthor:wilde&key=${api_key}`;
+
+let bookObj = null;
+
+$.ajax({
+    url: url,
+    type: "GET",
+    contentType: "application/json",
+    success: function(data) {
+        console.log(data);
+        bookObj = data;
+    },
+    error: function(xhr, text, err) {
+          console.log('error: ',err);
+            console.log('text: ', text);
+             console.log('xhr: ',xhr);
+    }	
+})
+
