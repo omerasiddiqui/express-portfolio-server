@@ -1,6 +1,12 @@
-console.log('Hello from the login books js file!');
+// global constiables
+const loginBtn = document.getElementById('loginBtn');
+const logoutBtn = document.getElementById('logoutBtn');
+const signUpBtn = document.getElementById('signUpBtn');
+const welcomeMsg = document.getElementById('welcomeMsg');
+const testElement = document.getElementById('test');
+
  // Your web app's Firebase configuration
- var firebaseConfig = {
+ const firebaseConfig = {
     apiKey: "AIzaSyD-dXlg-lmzYJgNyvS6EtbJdXQWVsI0aVg",
     authDomain: "bookscrud-4f00a.firebaseapp.com",
     databaseURL: "https://bookscrud-4f00a.firebaseio.com",
@@ -10,52 +16,30 @@ console.log('Hello from the login books js file!');
     appId: "1:4015088975:web:55628d6801600698b3913a",
     measurementId: "G-FZ9BSKEHBS"
   };
+
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   
-  // create variable for database
-  var db = firebase.firestore();
-
-  // firebase authentication checking for logged in user
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-
-      document.getElementById('books-loggedIn-div').style.display = "flex";
-      document.getElementById('books-main-div').style.display = "none";
-    } else {
-      // No user is signed in.
-
-      document.getElementById('books-loggedIn-div').style.display = "none";
-      document.getElementById('books-main-div').style.display = "flex";
-    }
-  });
-
-  var loginBtn = document.getElementById('loginBtn');
-  var logoutBtn = document.getElementById('logoutBtn');
+  // create constiable for database
+  const db = firebase.firestore();
 
   // log in the user
   loginBtn.addEventListener('click', function() {
     
-    var emailValue = document.getElementById('email_field').value;
-    var passwordValue = document.getElementById('password_field').value;
-    console.log(`email: ${emailValue} && password: ${passwordValue}`);
+    const email = document.getElementById('email_field').value;
+    const pass = document.getElementById('password_field').value;
+    const auth = firebase.auth();
+    console.log(`email: ${email} && password: ${pass}`);
 
-      firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        
-
-        console.log(`Error: ${errorMessage}`);
-      });
+    const promise = auth.signInWithEmailAndPassword(email, pass);
+    promise.catch(e => {console.log(error.message)});
   })
 
   // log out the user
   logoutBtn.addEventListener('click', function() {
-
-    firebase.auth().signOut().then(function() {
+    const auth = firebase.auth();
+    auth.signOut().then(function() {
         // Sign-out successful.
         console.log('logged out user');
       }).catch(function(error) {
@@ -64,12 +48,22 @@ console.log('Hello from the login books js file!');
       });
   })
 
+  // sign up new user
+  signUpBtn.addEventListener('click', function() {
+      const email = document.getElementById('email_field').value;
+      const pass = document.getElementById('password_field').value;
+      const auth = firebase.auth();
+      console.log(`email: ${email} && password: ${pass}`);
+
+      const promise = auth.createUserWithEmailAndPassword(email, pass);
+      promise.catch(e => console.log(e.message));
+  })
+
   // fetch user info
-  var testElement = document.getElementById('test');
   testElement.addEventListener('click', function() {
-    var user = firebase.auth().currentUser;
-    var name, email, photoUrl, uid, emailVerified;
-    var userJsonData;
+    const user = firebase.auth().currentUser;
+    let name, email, photoUrl, uid, emailVerified;
+    let userJsonData;
 
     if (user != null) {
         name = user.displayName;
@@ -90,6 +84,34 @@ console.log('Hello from the login books js file!');
 
         console.log(userJsonData);
     }
+  });
+
+  // firebase auth checking for logged in/out
+  firebase.auth().onAuthStateChanged(function(user) {
+
+    if(user) {
+        var userInfo = firebase.auth().currentUser;
+
+        console.log('user is signed in!');
+        console.log(firebase.auth().currentUser)
+        document.getElementById('books-loggedIn-div').style.display = "flex";
+        document.getElementById('books-main-div').style.display = "none";
+
+        welcomeMsg.innerHTML = `<strong>${userInfo.email}</strong> is currently logged in.`;
+        resetInputs();
+
+    } else {
+
+        console.log('no user signed in')
+        document.getElementById('books-loggedIn-div').style.display = "none";
+        document.getElementById('books-main-div').style.display = "flex";
+
+        resetInputs();
+    }
   })
 
+  function resetInputs() {
+    document.getElementById('email_field').value = "";
+    document.getElementById('password_field').value = "";
+  }
     

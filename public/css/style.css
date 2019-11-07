@@ -829,10 +829,13 @@ input[name="name"], input[name="phone"] {
   width: 35%;
   border: 1px solid lightgrey;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 120px;
   padding: 20px; }
   #books-main-div p, #books-loggedIn-div p {
     font-size: 1rem; }
+
+#books-loggedIn-div {
+  display: none; }
 
 #books-main-div h3, #books-loggedIn-div h3 {
   font-size: 2.5rem;
@@ -867,8 +870,8 @@ input[name="name"], input[name="phone"] {
 
 #signUpBtn {
   background: #fff;
-  color: #5d8ffc;
-  border: 1px solid #5d8ffc;
+  color: #004080;
+  border: 1px solid #004080;
   border-radius: 5px;
   margin-top: 5px;
   padding: 15px;
@@ -876,6 +879,6 @@ input[name="name"], input[name="phone"] {
   width: 100%;
   transition: 0.3s ease; }
   #signUpBtn:hover {
-    background: #5d8ffc;
+    background: #004080;
     color: #fff;
     border: 1px solid #fff; }
