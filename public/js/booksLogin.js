@@ -21,8 +21,28 @@ const testElement = document.getElementById('test');
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   
-  // create constiable for database
-  const db = firebase.firestore();
+  // create variable for database
+  var db = firebase.firestore();
+
+  // firebase authentication checking for logged in user
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+
+      document.getElementById('books-loggedIn-div').style.display = "flex";
+      document.getElementById('books-main-div').style.display = "none";
+    } else {
+      // No user is signed in.
+
+      document.getElementById('books-loggedIn-div').style.display = "none";
+      document.getElementById('books-main-div').style.display = "flex";
+    }
+  });
+
+  var loginBtn = document.getElementById('loginBtn');
+  var logoutBtn = document.getElementById('logoutBtn');
+  var googleLogIn = document.getElementById('googleLoginBtn');
+
 
   // log in the user
   loginBtn.addEventListener('click', function() {
@@ -110,8 +130,48 @@ const testElement = document.getElementById('test');
     }
   })
 
-  function resetInputs() {
-    document.getElementById('email_field').value = "";
-    document.getElementById('password_field').value = "";
-  }
+  // Google sign in
+
+  var provider = new firebase.auth.GoogleAuthProvider();
+
+  googleLogIn.addEventListener('click', () => {
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+      console.log(user);
+      console.log(token);
+    }).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+      console.log(`Error Code: ${errorCode}, error message: ${errorMessage}, error email: ${email}, credentials: ${credential}.`)
+    });
+  })
+
+  // change persistence to session baased
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  .then(function() {
+    // Existing and future Auth states are now persisted in the current
+    // session only. Closing the window would clear any existing state even
+    // if a user forgets to sign out.
+    // ...
+    // New sign-in will be persisted with session persistence.
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  })
+  .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+  
+
+
     

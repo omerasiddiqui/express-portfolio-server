@@ -37,7 +37,7 @@
     }
 }
 
-#loginBtn, #logoutBtn {
+#loginBtn, #logoutBtn, #googleLoginBtn {
     background: $accentBlue;
     color: #fff;
     border: 0px;
@@ -67,6 +67,15 @@
         background: #004080;
         color: #fff;
         border: 1px solid #fff;
+    }
+}
+
+#googleLoginBtn {
+    background: tomato;
+    margin-top: 5px;
+    &:hover {
+        color: tomato;
+        border: 1px solid tomato;
     }
 }
 
