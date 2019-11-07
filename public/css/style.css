@@ -653,7 +653,7 @@ a {
   display: flex;
   flex-direction: column;
   grid-gap: 20px;
-  grid-template-areas: 'name' 'email' 'company' 'phone' 'message'; }
+  grid-template-areas: 'name' 'email' 'company' 'phone' 'message'; }
 
 .required-field {
   grid-column: 1 / 2; }
@@ -851,7 +851,7 @@ input[name="name"], input[name="phone"] {
   #books-main-div input:focus {
     border: 1px solid #777; }
 
-#loginBtn, #logoutBtn {
+#loginBtn, #logoutBtn, #googleLoginBtn {
   background: #5d8ffc;
   color: #fff;
   border: 0px;
@@ -860,7 +860,7 @@ input[name="name"], input[name="phone"] {
   display: block;
   width: 100%;
   transition: 0.3s ease; }
-  #loginBtn:hover, #logoutBtn:hover {
+  #loginBtn:hover, #logoutBtn:hover, #googleLoginBtn:hover {
     background: #fff;
     color: #5d8ffc;
     border: 1px solid #5d8ffc; }
@@ -879,3 +879,10 @@ input[name="name"], input[name="phone"] {
     background: #5d8ffc;
     color: #fff;
     border: 1px solid #fff; }
+
+#googleLoginBtn {
+  background: tomato;
+  margin-top: 5px; }
+  #googleLoginBtn:hover {
+    color: tomato;
+    border: 1px solid tomato; }
