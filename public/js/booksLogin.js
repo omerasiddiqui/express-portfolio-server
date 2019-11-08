@@ -4,6 +4,7 @@ const logoutBtn = document.getElementById('logoutBtn');
 const signUpBtn = document.getElementById('signUpBtn');
 const welcomeMsg = document.getElementById('welcomeMsg');
 const testElement = document.getElementById('test');
+const googleLogIn = document.getElementById('googleLoginBtn');
 
  // Your web app's Firebase configuration
  const firebaseConfig = {
@@ -39,9 +40,6 @@ const testElement = document.getElementById('test');
     }
   });
 
-  var loginBtn = document.getElementById('loginBtn');
-  var logoutBtn = document.getElementById('logoutBtn');
-  var googleLogIn = document.getElementById('googleLoginBtn');
 
 
   // log in the user
