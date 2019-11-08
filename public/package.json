@@ -7,6 +7,7 @@
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-print": "^5.0.2",
     "gulp-sass": "^4.0.2"
