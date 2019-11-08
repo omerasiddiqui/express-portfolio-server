@@ -128,6 +128,11 @@ const googleLogIn = document.getElementById('googleLoginBtn');
     }
   })
 
+  function resetInputs() {
+    document.getElementById('email_field').value = "";
+    document.getElementById('password_field').value = "";
+  }
+
   // Google sign in
 
   var provider = new firebase.auth.GoogleAuthProvider();
